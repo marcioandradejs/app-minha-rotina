@@ -1,4 +1,6 @@
 import Link from 'next/link'
+import Image from 'next/image'
+import { SignInButton } from '../SignInButton'
 import styles from './styles.module.scss'
 
 export function Header() {
@@ -6,7 +8,12 @@ export function Header() {
     <header className={styles.headerContainer}>
       <div className={styles.headerContent}>
         <Link href="/">
-          <img src="/images/logo.svg" alt="Logo Board" />
+          <Image
+            src="/images/logo.svg"
+            alt="Logo Board"
+            width={72}
+            height={76}
+          />
         </Link>
         <nav>
           <Link href="/">
@@ -17,9 +24,7 @@ export function Header() {
           </Link>
         </nav>
 
-        <button>
-          Entrar com Github
-        </button>
+        <SignInButton />
       </div>
     </header>
   )
