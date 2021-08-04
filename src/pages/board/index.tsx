@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import { FiCalendar, FiClock, FiEdit2, FiPlus, FiTrash } from 'react-icons/fi'
+import { SupportButton } from '../../components/SupportButton'
 import styles from './styles.module.scss'
 
 export default function Board() {
@@ -21,7 +22,7 @@ export default function Board() {
       <h1>Você tem 2 tarefas!</h1>
       <section>
         <article className={styles.taskList}>
-          <p>Estudar react js com o sujeito programador</p>
+          <p>Estudar ReactJS com o Marcio Andrade</p>
           <div className={styles.actions}>
             <div>
               <div>
@@ -50,6 +51,7 @@ export default function Board() {
         </time>
       </div>
     </div>
+    <SupportButton />
     </>
   )
 }
