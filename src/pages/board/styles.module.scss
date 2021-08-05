@@ -116,3 +116,19 @@
     }
   }
 }
+
+.warnText {
+  display: flex;
+  align-items: center;
+
+  button {
+    background: transparent;
+    border: 0;
+  }
+
+  span {
+    color: #ffb800;
+    margin-left: 5px;
+    font-size: 1.1rem;
+  }
+}
