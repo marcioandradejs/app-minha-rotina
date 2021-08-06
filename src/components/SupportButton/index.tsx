@@ -5,7 +5,9 @@ export function SupportButton() {
   return(
     <div className={styles.donateContainer}>
       <Link href="/donate">
-        <button>Apoiar</button>
+        <a>
+          <button>Apoiar</button>
+        </a>
       </Link>
     </div>
   )
