@@ -6,10 +6,6 @@ import { PayPalButtons } from '@paypal/react-paypal-js';
 import firebase from '../../services/firebaseConnection';
 import { useState } from 'react';
 
-// CLIENT ID AVOJVBDe9WtSDCBLkfCOM9b0uFBqqG2IcizY0tNhvgvFQDEPvmkNOLUi9r_6QBuaQfK5qzwBF36Lzhdj
-
-// <script src="https://www.paypal.com/sdk/js?client-id=YOUR_CLIENT_ID"></script>
-
 interface DonateProps {
   user: {
     nome: string;
