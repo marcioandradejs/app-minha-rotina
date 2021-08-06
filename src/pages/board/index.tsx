@@ -6,7 +6,6 @@ import { FiCalendar, FiClock, FiEdit2, FiPlus, FiTrash, FiX } from 'react-icons/
 import { SupportButton } from '../../components/SupportButton';
 import styles from './styles.module.scss';
 import Link from 'next/link';
-
 import firebase from '../../services/firebaseConnection';
 import { format, formatDistance } from 'date-fns';
 import { ptBR } from 'date-fns/locale'
@@ -175,7 +174,7 @@ export default function Board({ user, data }: BoardProps) {
         <div>
           <FiClock size={28} color="#FFF" />
           <time>
-            Última doação foi há {formatDistance(new Date(user.lastDonate), new Date(), { locale: ptBR })}
+            A sua última doação foi há {formatDistance(new Date(user.lastDonate), new Date(), { locale: ptBR })}
           </time>
         </div>
       </div>
