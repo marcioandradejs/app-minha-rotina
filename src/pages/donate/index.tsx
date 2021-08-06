@@ -13,7 +13,6 @@ interface DonateProps {
     nome: string;
     id: string;
     image: string;
-    vip: boolean;
   }
 }
 
@@ -41,10 +40,10 @@ export default function Donate({ user }: DonateProps) {
       <main className={styles.container}>
         <Image src={rocket} alt="Foguete do aplicativo Hábitos" />
 
-        {user.vip && (
+        {vip && (
           <div className={styles.vip}>
             <Image width={50} height={50} src={user.image} alt={user.nome} />
-            <span>Parabéns {user.nome}, você é um apoiador!</span>
+            <span>Parabéns {user.nome}, você é um novo apoiador!</span>
           </div>
         )}
 
@@ -90,7 +89,6 @@ export const getServerSideProps: GetServerSideProps = async ({ req }) => {
     nome: session?.user.name,
     id: session?.id,
     image: session?.user.image,
-    vip: session?.vip,
   }
 
 

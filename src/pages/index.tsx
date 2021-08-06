@@ -27,7 +27,7 @@ export default function Home({ data }: HomeProps ) {
     <main className={styles.contentContainer}>
       <Image src={boardUser} alt="Ferramenta Hábitos" />
        <section className={styles.callToAction}>
-         <h1>Uma ferramenta para seu dia a dia Escreva, planeje e organize-se..</h1>
+         <h1>Uma ferramenta para seu dia a dia.<br />Escreva, planeje e se organize!</h1>
          <p>
            <span>100% Gratuita</span> e online
           </p>
