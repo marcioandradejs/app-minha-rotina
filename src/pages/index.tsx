@@ -3,6 +3,8 @@ import { GetStaticProps } from 'next';
 import Head from 'next/head';
 import styles from '../styles/styles.module.scss';
 import firebase from '../services/firebaseConnection';
+import Image from 'next/image';
+import boardUser from '../../public/images/board-user.svg';
 
 type Data = {
   id: string;
@@ -23,7 +25,7 @@ export default function Home({ data }: HomeProps ) {
       <title>Board - Organizando suas tarefas</title>
     </Head>
     <main className={styles.contentContainer}>
-      <img src="/images/board-user.svg" alt="Ferramenta Board" />
+      <Image src={boardUser} alt="Ferramenta Hábitos" />
        <section className={styles.callToAction}>
          <h1>Uma ferramenta para seu dia a dia Escreva, planeje e organize-se..</h1>
          <p>
@@ -35,7 +37,7 @@ export default function Home({ data }: HomeProps ) {
          {donaters.length !== 0 && <h2 className={styles.apoiador}>Apoiadores:</h2>}
          <div className={styles.donaters}>
            {donaters.map( item => (
-              <img key={item.image} src={item.image} alt="avatar do usuário doador" />
+              <Image width={65} height={65} key={item.id} src={item.image} alt="Usuários apoiadores" />
            ))}
          </div>
        </div>

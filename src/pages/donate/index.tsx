@@ -5,12 +5,15 @@ import { getSession } from 'next-auth/client';
 import { PayPalButtons } from '@paypal/react-paypal-js';
 import firebase from '../../services/firebaseConnection';
 import { useState } from 'react';
+import Image from 'next/image';
+import rocket from '../../../public/images/rocket.svg';
 
 interface DonateProps {
   user: {
     nome: string;
     id: string;
     image: string;
+    vip: boolean;
   }
 }
 
@@ -36,11 +39,11 @@ export default function Donate({ user }: DonateProps) {
         <title>Ajude a plataforma Board permanecer online</title>
       </Head>
       <main className={styles.container}>
-        <img src="/images/rocket.svg" alt="Seja Apoiador" />
+        <Image src={rocket} alt="Foguete do aplicativo Hábitos" />
 
-        {vip && (
+        {user.vip && (
           <div className={styles.vip}>
-            <img src={user.image} alt={user.nome} />
+            <Image width={50} height={50} src={user.image} alt={user.nome} />
             <span>Parabéns {user.nome}, você é um apoiador!</span>
           </div>
         )}
@@ -86,7 +89,8 @@ export const getServerSideProps: GetServerSideProps = async ({ req }) => {
   const user = {
     nome: session?.user.name,
     id: session?.id,
-    image: session?.user.image
+    image: session?.user.image,
+    vip: session?.vip,
   }
 
 

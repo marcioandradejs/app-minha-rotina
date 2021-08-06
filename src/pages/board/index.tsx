@@ -143,7 +143,9 @@ export default function Board({ user, data }: BoardProps) {
         {taskList.map(task => (
           <article key={task.id} className={styles.taskList}>
             <Link href={`/board/${task.id}`}>
-              <p>{task.tarefa}</p>
+              <a>
+                <p>{task.tarefa}</p>
+              </a>
             </Link>
             <div className={styles.actions}>
               <div>
