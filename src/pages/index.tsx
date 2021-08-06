@@ -35,7 +35,7 @@ export default function Home({ data }: HomeProps ) {
          {donaters.length !== 0 && <h2 className={styles.apoiador}>Apoiadores:</h2>}
          <div className={styles.donaters}>
            {donaters.map( item => (
-              <img key={item.image} src={item.image} alt="Usuário 1" />
+              <img key={item.image} src={item.image} alt="avatar do usuário doador" />
            ))}
          </div>
        </div>
@@ -44,7 +44,7 @@ export default function Home({ data }: HomeProps ) {
   );
 }
 
-export const getStaticPorps: GetStaticProps = async () => {
+export const getStaticProps: GetStaticProps = async () => {
   const donaters = await firebase.firestore().collection('users').get();
   const data = JSON.stringify(donaters.docs.map( u => {
     return {
